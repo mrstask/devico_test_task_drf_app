@@ -12,8 +12,6 @@ class PostListSerializer(serializers.ModelSerializer):
                   'id'
                   )
 
-        extra_kwargs = {'password': {'write_only': True}}
-
     def create(self, validated_data):
         post = Post(**validated_data)
         post.save()

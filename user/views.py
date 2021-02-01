@@ -17,6 +17,8 @@ class UserDetail(mixins.RetrieveModelMixin,
     """
     queryset = User.objects.all().select_related('extendeduser')
     serializer_class = UserDetailSerializer
+    permission_classes = []
+
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
